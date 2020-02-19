@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p> {{name}}</p>
+        <span>{{heigth}}</span>
+        <!--  -->
+    </div>
+    <script src="./vue.js"></script>
+
+    <script>
+        var ve = new Vue({
+            el: "#app",
+            data: {
+                name: "王同学",
+                age: "55岁",
+                heigth: "180厘米"
+            },
+            methods: {
+                // getName:function(){}es5写法
+                // 这里不能用箭头函数 会改变this指向 
+                getName() {
+                    this.name = "我是谁"
+                    alert("ve.getName()可以直接调用");
+                }
+            }
+            // 这是一个对象 用来写方法 
+        });
+        ve.heigth = "110厘米"
+        console.log(ve.heigth);
+        ve.name = "sssss";
+    </script>
+</body>
+
+</html>

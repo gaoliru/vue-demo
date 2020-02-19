@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- 在视图中使用data中定义的数据 -->
+        <p>{{name}}</p>
+        <p>{{}}</p>
+    </div>
+    <!-- 引入vue.js   这时候就有一个全局对象  vue-->
+    <script src="./vue.js"></script>
+</body>
+<script>
+    // 在script标签中实例化对象
+    // 设置实例化选项  el / data
+    var vue = new Vue({
+        el: "#app"
+            // 指的是管理视图的选择器  必须写这样可以是各种选择器才能管控对应的标签
+            //    无论是什么选择器 vue实例只能对应所选的dom元素的第一个
+            // 不能是body和html标签
+            ,
+        // 响应式数据 key:value   
+        data: {
+            name: "Hello World",
+            hair: "1000根"
+        },
+        methods: {}
+    });
+    // 都写在vue（{之内}）
+    // 基本数据可以在新的html中vh快速生成
+</script>
+
+</html>
