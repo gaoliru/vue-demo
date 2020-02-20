@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-text="name"></p>
+        <p title="name">你好</p>
+        <!-- title属性用来鼠标经过显示提示信息 显示为name-->
+        <p v-text="'想要显示为静态字符串需要双引号内加个单引号'"></p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name: "一组数据",
+
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

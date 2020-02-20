@@ -12,22 +12,39 @@
         <p v-text="name">
             v-text = "name" 替换标签内所有内容
             <p>111</p>
+            <!-- 子标签不变 -->
         </p>
-        <p> 我是：{{name}}双大括号</p>
+        <p> 我是：{{name}}</p>
+        <!-- 双大花括号是插值表达式 -->
+        <p>{{age = "将十八变为此字符串"}}</p>
+        <p>{{age >100}}</p>
+        <!-- 逻辑判断 -->
+        <p>{{heigth
+            < 170}}</p>
+                <!-- 逻辑运算  因为是先赋值后计算  所以变为字符串拼接-->
+                <p>{{age+heigth}}</p>
+                <p>{{heigth+heigth}}</p>
+                <!--三元表达式 -->
+                <p>{{age >0?"yes":"no"}}</p>
+                <!-- 里面不可以写关键字 -->
+
     </div>
 
 </body>
 <script src="./vue.js"></script>
 <script>
     var vm = new Vue({
+        // 实力选项 el
         el: "#app",
+        //实例选项  数据对象可以通过
+        //    实例vm.属性名=值的方式更新
         data: {
             name: "某人",
             age: "18",
-
+            heigth: 178
         },
-        // 获取
-        // 里面写方法
+        // 获取  可以通过实例vm访问
+        // 里面写各种方法 但是不能是箭头函数 因为会改变this指向
         methods: {
             getName() {
                 return "干嘛的"
