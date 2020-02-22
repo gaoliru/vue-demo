@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 想要函数内部this指向外面得this    var wai = this
+    或者箭头函数也可以  箭头函数得this指向上下文
+    -->
+    <div id="app">
+        <!-- v-cloak指令可以在渲染完成后自动将v-cloak指令移除 -->
+        <div v-cloak style="font-size: 20px; color:pink;">{{name}}</div>
+        <div v-once>{{age}}</div>
+        <!--  v-once只执行一次 -->
+
+        <input type="text" v-model="age">
+        <!-- v-moudel双向绑定 设置一次就可以-->
+
+        <input type="text" :value="you">
+        <!-- value属性值为data里的变量 -->
+
+        <div>{{age}}</div>
+        <!-- v-moudel双向绑定不用设置了 -->
+
+        <div v-pre="age">{{you}}</div>
+        <!-- v-pre不进行渲染 -->
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: "加油",
+                msg: "努力",
+                age: 19,
+                me: "不变",
+                you: "一起"
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- v-for指令 item(自定义变量名)in items(data中的变量) -->
+            <!-- 循环的时候生成了什么  就在谁的标签上些什么 -->
+            <!-- 第一种<li v-for="abc in list">{{abc}}</li> -->
+            <li v-for="abc of list">
+                <div><span>嵌套试试</span></div>{{abc}}</li>
+            <!-- abc额外知识表示美国长大的中国人 -->
+            <!-- item of items 的形式 -->
+            <!-- in list要循环的数组 -->
+            <li v-for="(abc list)in list">
+                <div><span>第{{index+1}}个</span>{{abc}}</div>
+            </li>
+        </ul>
+        <ul>
+            <!-- (value,key,index)in items -->
+            <!-- 值/键/索引 in items数据名称 -->
+            <!-- item 每个值 -->
+            <li v-for="item in methods"></li>
+        </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: ["你", "我", "她她她"]
+
+            },
+            zidingyi: {
+                name: 一号,
+                img: "",
+                name: 二,
+                img: "",
+                name: 三号,
+                img: ""
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

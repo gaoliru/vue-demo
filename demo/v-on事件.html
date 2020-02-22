@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="happy">开心点一点</button>
+        <!-- @事件=“”简写 -->
+        <button @click="happy"> 一点</button>
+        <button @click="fn">试试</button>
+        <button @click="fn">试试</button>
+        <button @click.once="fn">只执行一次</button>
+        <input type="text" v-on:change="changeInput">
+        <input type="text" v-on:input="changeInput">
+        <button @click="btn">试一试吧</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        //  v-on注册事件 ： 事件名 .修饰符="方法名"
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: "就是嗨",
+                name: "点击弹出name的值"
+            },
+            methods: {
+                happy() {
+                    alert(this.msg)
+                },
+                changeInput(event) {
+                    console.log("input");
+                    alert(event.target.value)
+
+                },
+                fn(event) {
+                    console.log(event);
+                    alert("111")
+                },
+                btn() {
+                    console.log(this.name);
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

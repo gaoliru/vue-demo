@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <p></p>
+        <p></p>
+        <div>{{str|guo}}</div>
+    </div>
+    <script src="./vue.js"></script>
+
+</body>
+<script>
+    // 全局过滤器要在Vue实例化之前定义
+    //语法： Vue.filter(名称，函数)
+    // 过滤器必须有返回值
+    Vue.filter("guo", function(value) {
+        return value.charAt().toUpperCase() + value.substr(1)
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            str: "abcd"
+
+        },
+        methods: {
+            // 局部过滤器
+
+        }
+
+        // 
+    })
+</script>
+
+</html>
